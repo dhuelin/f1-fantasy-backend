@@ -1,6 +1,6 @@
 package com.dhuelin.f1.fantasy.backend.services;
 
-import com.dhuelin.f1.fantasy.backend.Driver;
+import com.dhuelin.f1.fantasy.backend.pojos.Driver;
 import com.dhuelin.f1.fantasy.backend.pojos.RacePrediction;
 import com.dhuelin.f1.fantasy.backend.pojos.RaceResult;
 

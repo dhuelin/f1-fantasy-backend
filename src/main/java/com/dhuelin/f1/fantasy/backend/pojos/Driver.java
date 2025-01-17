@@ -1,4 +1,4 @@
-package com.dhuelin.f1.fantasy.backend;
+package com.dhuelin.f1.fantasy.backend.pojos;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
