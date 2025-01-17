@@ -4,30 +4,39 @@ import com.dhuelin.f1.fantasy.backend.dtos.UserDTO;
 import com.dhuelin.f1.fantasy.backend.persistence.entities.UserEntity;
 import com.dhuelin.f1.fantasy.backend.persistence.repositories.UserRepository;
 import com.dhuelin.f1.fantasy.backend.services.mappers.UserMapper;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
-@WebMvcTest
 class DataRetrieverServiceTest {
 
-    private final UserRepository userRepository = mock(UserRepository.class);
-    private final UserMapper userMapper = mock(UserMapper.class);
+    @Mock
+    private UserRepository userRepository;
 
-    @Autowired
+    @Mock
+    private UserMapper userMapper;
+
+    @InjectMocks
     private DataRetrieverService dataRetrieverService;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     void getAllUsers_ShouldReturnMappedDTOs() {
         // Arrange
         UserEntity userEntity = new UserEntity(1L, "user1", "user1@example.com", "password", 0);
         UserDTO userDTO = new UserDTO("user1", "user1@example.com", 0);
+
         when(userRepository.findAll()).thenReturn(List.of(userEntity));
         when(userMapper.toDTO(userEntity)).thenReturn(userDTO);
 

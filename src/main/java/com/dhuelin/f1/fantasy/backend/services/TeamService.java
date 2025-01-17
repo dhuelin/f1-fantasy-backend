@@ -1,5 +1,6 @@
 package com.dhuelin.f1.fantasy.backend.services;
 
+import com.dhuelin.f1.fantasy.backend.dtos.TeamDTO;
 import com.dhuelin.f1.fantasy.backend.persistence.entities.TeamEntity;
 import com.dhuelin.f1.fantasy.backend.persistence.repositories.TeamRepository;
 import com.dhuelin.f1.fantasy.backend.pojos.Team;
@@ -16,10 +17,10 @@ public class TeamService {
     @Autowired
     private TeamRepository teamRepository;
 
-    public Team getTeamById(Long id) {
+    public TeamDTO getTeamById(Long id) {
         TeamEntity teamEntity = teamRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Team not found"));
-        return teamMapper.toPOJO(teamEntity);
+        return teamMapper.toDTO(teamEntity);
     }
 
     public void saveTeam(Team team) {
