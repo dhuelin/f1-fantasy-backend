@@ -1,5 +1,5 @@
 # Step 1: Use a base image with Java 23
-FROM eclipse-temurin:23-jdk-jammy
+FROM eclipse-temurin
 
 # Step 2: Set the working directory inside the container
 WORKDIR /app
