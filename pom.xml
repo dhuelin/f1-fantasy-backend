@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dhuelin.f1.fantasy</groupId>
-	<artifactId>backend</artifactId>
+	<artifactId>application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>F1 Fantasy Backend</name>
 	<description>F1 Fantasy Backend</description>
