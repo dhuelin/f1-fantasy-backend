@@ -5,7 +5,7 @@ FROM eclipse-temurin
 WORKDIR /app
 
 # Step 3: Copy the application JAR file into the container
-COPY target/f1-fantasy-backend-0.0.1-SNAPSHOT.jar app.jar
+COPY target/backend-0.0.1-SNAPSHOT.jar app.jar
 
 # Step 4: Expose the application port
 EXPOSE 8080
