@@ -12,5 +12,5 @@ public class TeamDTO {
     private String name;             // Team name, e.g., "Mercedes"
     private String country;          // Team country, e.g., "Germany"
     private int championshipsWon;    // Number of championships won
-    private int currentPoints;       // Current season points
+    private double currentPoints;       // Current season points
 }
