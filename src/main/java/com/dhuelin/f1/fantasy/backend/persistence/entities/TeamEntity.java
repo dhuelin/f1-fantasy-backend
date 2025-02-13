@@ -25,5 +25,5 @@ public class TeamEntity {
     private int championshipsWon; // Number of championships the team has won
 
     @Column(nullable = false)
-    private int currentPoints; // Current season points
+    private double currentPoints; // Current season points
 }
